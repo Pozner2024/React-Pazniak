@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductTable.scss";
-import Products from "./Products";
+import Product from "./Product";
 
 class ProductTable extends React.Component {
   render() {
@@ -15,7 +15,9 @@ class ProductTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <Products products={this.props.products} />
+          {this.props.products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
         </tbody>
       </table>
     );
