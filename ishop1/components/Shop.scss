@@ -1,0 +1,52 @@
+﻿$banner-bg: #eca4d7;
+$address-color: #4a5568;
+$phone-color: #2b6cb0;
+$email-color: #805ad5;
+$website-color: #38a169;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.ShopBanner {
+  background: $banner-bg;
+  padding: 32px 24px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.ShopName {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.ShopAddress {
+  font-size: 1rem;
+  color: $address-color;
+  margin-bottom: 8px;
+}
+
+.ShopPhone {
+  font-size: 1rem;
+  color: $phone-color;
+  margin-bottom: 8px;
+}
+
+.ShopEmail {
+  font-size: 1rem;
+  color: $email-color;
+  margin-bottom: 8px;
+}
+
+.ShopWebsite {
+  font-size: 1rem;
+  color: $website-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
