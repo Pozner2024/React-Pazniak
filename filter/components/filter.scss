@@ -1,0 +1,67 @@
+﻿.filter-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background: #f3a3de;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  font-family: "Inter", Arial, sans-serif;
+
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .filter-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
+    &:focus {
+      border: 1.5px solid #1976d2;
+    }
+  }
+
+  .filter-checkbox {
+    margin-left: 8px;
+  }
+
+  .filter-reset {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover {
+      background: #125ea2;
+    }
+  }
+
+  .filter-list {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    padding: 8px 0;
+  }
+
+  .filter-list-item {
+    padding: 6px 16px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
