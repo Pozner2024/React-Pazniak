@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Chocolate Gift Set 'Holiday'",
+    "price": 12.99,
+    "imageUrl": "https://m.media-amazon.com/images/I/81FFrcLbgsL._SL1500_.jpg",
+    "stock": 12
+  },
+  {
+    "id": 2,
+    "name": "Green Tea 'Spring Aroma'",
+    "price": 5.5,
+    "imageUrl": "https://img.joomcdn.net/c7a0171e177655128f1f14afde5b34cb26e3e88e_original.jpeg",
+    "stock": 25
+  },
+  {
+    "id": 3,
+    "name": "Ground Coffee 'Morning'",
+    "price": 7.25,
+    "imageUrl": "https://i.pinimg.com/474x/7f/68/60/7f6860acffb8567ca7af58d264911d55.jpg",
+    "stock": 8
+  },
+  {
+    "id": 4,
+    "name": "Natural Honey, 500g",
+    "price": 9.99,
+    "imageUrl": "https://www.cellsii.com/images/detailed/61/Sary-Natural-Bee-Honey-500g_979s-5d.jpg",
+    "stock": 15
+  },
+  {
+    "id": 5,
+    "name": "Oatmeal Cookies with Raisins",
+    "price": 3.8,
+    "imageUrl": "https://brokenovenbaking.com/wp-content/uploads/2023/01/oatmeal-raisin-cookies-6-1.jpg",
+    "stock": 30
+  },
+  {
+    "id": 6,
+    "name": "Almond Biscotti",
+    "price": 4.5,
+    "imageUrl": "https://i.pinimg.com/736x/c4/10/2c/c4102c179503819d8cb29ca4c53cb770.jpg",
+    "stock": 20
+  },
+  {
+    "id": 7,
+    "name": "Dried Fruit Mix",
+    "price": 6.75,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=b221b9b57332e1844551adea0011eace_l-7755899-images-thumbs&n=13",
+    "stock": 18
+  },
+  {
+    "id": 8,
+    "name": "Black Tea 'Classic Blend'",
+    "price": 4.99,
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2485/1434/products/earl_grey_black_800x.jpg?v=1581924329",
+    "stock": 22
+  },
+  {
+    "id": 9,
+    "name": "Hazelnut Spread",
+    "price": 8.25,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=7dec38a2b1e33113634f6ffaa4376fabeb4061a2-5859023-images-thumbs&n=13",
+    "stock": 10
+  },
+  {
+    "id": 10,
+    "name": "Caramel Candies",
+    "price": 2.99,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=30278b574144435c83d06ec45a279024_l-4614378-images-thumbs&n=13",
+    "stock": 40
+  }
+]
