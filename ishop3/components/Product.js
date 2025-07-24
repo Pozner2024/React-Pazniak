@@ -2,8 +2,8 @@ import React from "react";
 
 class Product extends React.Component {
   handleClick = () => {
-    // If in edit or add mode, ignore click
-    if (this.props.mode === 2 || this.props.mode === 3) {
+    // If there are unsaved changes, ignore click
+    if (this.props.hasChanges) {
       return;
     }
     this.props.cbSelect(this.props.product.id);
@@ -11,6 +11,10 @@ class Product extends React.Component {
 
   handleEdit = (e) => {
     e.stopPropagation();
+    // If there are unsaved changes, ignore edit
+    if (this.props.hasChanges) {
+      return;
+    }
     this.props.cbEdit(this.props.product.id);
   };
 
@@ -23,7 +27,7 @@ class Product extends React.Component {
 
   render() {
     const backgroundColor = this.props.isSelected ? "yellow" : "white";
-    const isDisabled = this.props.mode === 2 || this.props.mode === 3;
+    const isDisabled = this.props.hasChanges;
 
     return (
       <tr

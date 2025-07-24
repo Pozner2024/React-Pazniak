@@ -14,7 +14,7 @@ class ProductTable extends React.Component {
   };
 
   selectItem = (id) => {
-    if (this.state.mode === 2 && this.state.hasChanges) {
+    if (this.state.hasChanges) {
       return;
     }
 
@@ -26,7 +26,7 @@ class ProductTable extends React.Component {
   };
 
   editItem = (id) => {
-    if (this.state.mode === 2 && this.state.hasChanges) {
+    if (this.state.hasChanges) {
       return;
     }
 
@@ -39,7 +39,7 @@ class ProductTable extends React.Component {
   };
 
   addNewItem = () => {
-    if (this.state.mode === 2 && this.state.hasChanges) {
+    if (this.state.hasChanges) {
       return;
     }
 
@@ -148,6 +148,7 @@ class ProductTable extends React.Component {
                     this.state.mode === 1
                   }
                   mode={this.state.mode}
+                  hasChanges={this.state.hasChanges}
                   cbSelect={this.selectItem}
                   cbEdit={this.editItem}
                   cbDelete={this.deleteItem}
@@ -159,7 +160,7 @@ class ProductTable extends React.Component {
           <div className="table-actions">
             <button
               onClick={this.addNewItem}
-              disabled={this.state.mode === 2 && this.state.hasChanges}
+              disabled={this.state.hasChanges}
               className="new-btn"
             >
               New Product

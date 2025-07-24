@@ -4,13 +4,17 @@ import "./CardEdit.scss";
 class CardEdit extends React.Component {
   state = {
     name: this.props.product ? this.props.product.name : "",
-    price: this.props.product ? this.props.product.price : 0,
-    stock: this.props.product ? this.props.product.stock : 0,
+    price: this.props.product ? this.props.product.price : "",
+    stock: this.props.product ? this.props.product.stock : "",
     nameError: "",
     priceError: "",
     stockError: "",
     isValid: false,
   };
+
+  componentDidMount() {
+    this.validateForm();
+  }
 
   nameChange = (e) => {
     this.setState({ name: e.target.value }, () => {
@@ -20,7 +24,7 @@ class CardEdit extends React.Component {
   };
 
   priceChange = (e) => {
-    const value = parseFloat(e.target.value);
+    const value = e.target.value === "" ? "" : parseFloat(e.target.value);
     this.setState({ price: value }, () => {
       this.validateForm();
       this.props.onChange && this.props.onChange();
@@ -28,7 +32,7 @@ class CardEdit extends React.Component {
   };
 
   stockChange = (e) => {
-    const value = parseInt(e.target.value);
+    const value = e.target.value === "" ? "" : parseInt(e.target.value);
     this.setState({ stock: value }, () => {
       this.validateForm();
       this.props.onChange && this.props.onChange();
@@ -36,8 +40,18 @@ class CardEdit extends React.Component {
   };
 
   priceFocus = (e) => {
-    if (this.state.price === 0) {
-      this.setState({ price: "" });
+    if (this.state.price === 0 || this.state.price === "") {
+      this.setState({ price: "" }, () => {
+        this.validateForm();
+      });
+    }
+  };
+
+  stockFocus = (e) => {
+    if (this.state.stock === 0 || this.state.stock === "") {
+      this.setState({ stock: "" }, () => {
+        this.validateForm();
+      });
     }
   };
 
@@ -55,31 +69,30 @@ class CardEdit extends React.Component {
       isValid = false;
     }
 
-    const { mode } = this.props;
-    const isEditMode = mode === 2;
-    const isAddMode = mode === 3;
-
-    if (isAddMode) {
-      if (
-        this.state.price === null ||
-        this.state.price === undefined ||
-        this.state.price === "" ||
-        isNaN(this.state.price)
-      ) {
-        priceError = "Price is required";
-        isValid = false;
-      } else if (this.state.price <= 0) {
-        priceError = "Price must be greater than 0";
-        isValid = false;
-      }
-    } else {
-      if (this.state.price <= 0) {
-        priceError = "Price must be greater than 0";
-        isValid = false;
-      }
+    // Validate price - check for empty values and invalid numbers
+    if (
+      this.state.price === null ||
+      this.state.price === undefined ||
+      this.state.price === "" ||
+      isNaN(this.state.price)
+    ) {
+      priceError = "Price is required";
+      isValid = false;
+    } else if (this.state.price <= 0) {
+      priceError = "Price must be greater than 0";
+      isValid = false;
     }
 
-    if (this.state.stock < 0) {
+    // Validate stock - check for empty values and invalid numbers
+    if (
+      this.state.stock === null ||
+      this.state.stock === undefined ||
+      this.state.stock === "" ||
+      isNaN(this.state.stock)
+    ) {
+      stockError = "Stock is required";
+      isValid = false;
+    } else if (this.state.stock < 0) {
       stockError = "Stock cannot be negative";
       isValid = false;
     }
@@ -96,8 +109,8 @@ class CardEdit extends React.Component {
     if (this.state.isValid) {
       const productData = {
         name: this.state.name.trim(),
-        price: this.state.price,
-        stock: this.state.stock,
+        price: parseFloat(this.state.price) || 0,
+        stock: parseInt(this.state.stock) || 0,
       };
       this.props.cbSave(productData);
     }
@@ -152,6 +165,7 @@ class CardEdit extends React.Component {
               value={this.state.stock}
               onChange={this.stockChange}
               className={this.state.stockError ? "error" : ""}
+              onFocus={this.stockFocus}
             />
             {this.state.stockError && (
               <span className="error-message">{this.state.stockError}</span>
