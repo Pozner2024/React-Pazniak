@@ -19,7 +19,9 @@ class CardEdit extends React.Component {
   nameChange = (e) => {
     this.setState({ name: e.target.value }, () => {
       this.validateForm();
-      this.props.onChange && this.props.onChange();
+      if (this.props.onChange) {
+        this.props.onChange();
+      }
     });
   };
 
@@ -27,7 +29,9 @@ class CardEdit extends React.Component {
     const value = e.target.value === "" ? "" : parseFloat(e.target.value);
     this.setState({ price: value }, () => {
       this.validateForm();
-      this.props.onChange && this.props.onChange();
+      if (this.props.onChange) {
+        this.props.onChange();
+      }
     });
   };
 
@@ -35,24 +39,10 @@ class CardEdit extends React.Component {
     const value = e.target.value === "" ? "" : parseInt(e.target.value);
     this.setState({ stock: value }, () => {
       this.validateForm();
-      this.props.onChange && this.props.onChange();
+      if (this.props.onChange) {
+        this.props.onChange();
+      }
     });
-  };
-
-  priceFocus = (e) => {
-    if (this.state.price === 0 || this.state.price === "") {
-      this.setState({ price: "" }, () => {
-        this.validateForm();
-      });
-    }
-  };
-
-  stockFocus = (e) => {
-    if (this.state.stock === 0 || this.state.stock === "") {
-      this.setState({ stock: "" }, () => {
-        this.validateForm();
-      });
-    }
   };
 
   validateForm = () => {
@@ -151,7 +141,6 @@ class CardEdit extends React.Component {
               onChange={this.priceChange}
               className={this.state.priceError ? "error" : ""}
               required={isAddMode}
-              onFocus={this.priceFocus}
             />
             {this.state.priceError && (
               <span className="error-message">{this.state.priceError}</span>
@@ -165,7 +154,6 @@ class CardEdit extends React.Component {
               value={this.state.stock}
               onChange={this.stockChange}
               className={this.state.stockError ? "error" : ""}
-              onFocus={this.stockFocus}
             />
             {this.state.stockError && (
               <span className="error-message">{this.state.stockError}</span>
