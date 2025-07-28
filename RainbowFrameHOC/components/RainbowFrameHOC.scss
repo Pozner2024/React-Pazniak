@@ -1,0 +1,45 @@
+/* Стили для радужной рамки HOC */
+.rainbow-frame {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 10px solid;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-1 {
+  width: 380px;
+  height: 100px;
+}
+
+.frame-2 {
+  width: 420px;
+  height: 140px;
+}
+
+.frame-3 {
+  width: 460px;
+  height: 180px;
+}
+
+.frame-4 {
+  width: 500px;
+  height: 220px;
+}
+
+.frame-5 {
+  width: 540px;
+  height: 260px;
+}
+
+.frame-6 {
+  width: 580px;
+  height: 300px;
+}
+
+.frame-7 {
+  width: 620px;
+  height: 340px;
+}

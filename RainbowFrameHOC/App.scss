@@ -1,0 +1,21 @@
+/* Основной контейнер приложения */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.app-content {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.hello-content {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}

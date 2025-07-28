@@ -1,0 +1,45 @@
+/* Стили для радужной рамки */
+.rainbow-frame {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 10px solid;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-1 {
+  width: 240px;
+  height: 100px;
+}
+
+.frame-2 {
+  width: 280px;
+  height: 140px;
+}
+
+.frame-3 {
+  width: 320px;
+  height: 180px;
+}
+
+.frame-4 {
+  width: 360px;
+  height: 220px;
+}
+
+.frame-5 {
+  width: 400px;
+  height: 260px;
+}
+
+.frame-6 {
+  width: 440px;
+  height: 300px;
+}
+
+.frame-7 {
+  width: 480px;
+  height: 340px;
+}
