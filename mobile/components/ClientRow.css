@@ -1,0 +1,35 @@
+.ClientRow {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.ClientRow:hover {
+  background-color: #f8f9fa;
+}
+
+.ClientRow:last-child {
+  border-bottom: none;
+}
+
+.client-row {
+  display: flex;
+  align-items: center;
+}
+
+.client-cell {
+  flex: 1;
+  padding: 12px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.client-cell:last-child {
+  border-right: none;
+}
+
+.client-text {
+  font-size: 14px;
+  color: #333;
+}
