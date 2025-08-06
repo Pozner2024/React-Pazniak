@@ -8,13 +8,23 @@ const Controls = ({
   onFilterChange,
   onReset,
 }) => {
+  const handleInputChange = (event) => {
+    const filterText = event.target.value;
+    onFilterChange(filterText);
+  };
+
+  const handleCheckboxChange = (event) => {
+    const isChecked = event.target.checked;
+    onSortChange(isChecked);
+  };
+
   return (
     <div className="filter-controls">
       <input
         type="text"
         className="filter-input"
         value={filter}
-        onChange={onFilterChange}
+        onChange={handleInputChange}
         placeholder="Фильтр..."
       />
       <label>
@@ -22,7 +32,7 @@ const Controls = ({
           type="checkbox"
           className="filter-checkbox"
           checked={isSorted}
-          onChange={onSortChange}
+          onChange={handleCheckboxChange}
         />
         Сортировать
       </label>

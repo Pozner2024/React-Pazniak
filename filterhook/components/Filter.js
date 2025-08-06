@@ -24,12 +24,12 @@ const Filter = ({ words: initialWords }) => {
     processWords();
   }, [isSorted, filter, words]);
 
-  const handleSortChange = (eo) => {
-    setIsSorted(eo.target.checked);
+  const handleSortChange = (isChecked) => {
+    setIsSorted(isChecked);
   };
 
-  const handleFilterChange = (eo) => {
-    setFilter(eo.target.value);
+  const handleFilterChange = (filterText) => {
+    setFilter(filterText);
   };
 
   const handleReset = () => {
