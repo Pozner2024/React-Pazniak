@@ -1,0 +1,8 @@
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter-list-item:hover {
+  background-color: #e3f2fd;
+}
