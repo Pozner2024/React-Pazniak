@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "lastName": "Иванов",
+    "firstName": "Иван",
+    "patronymic": "Иванович",
+    "balance": 200,
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "lastName": "Сидоров",
+    "firstName": "Сидор",
+    "patronymic": "Сидорович",
+    "balance": 250,
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "lastName": "Петров",
+    "firstName": "Пётр",
+    "patronymic": "Петрович",
+    "balance": 180,
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "lastName": "Григорьев",
+    "firstName": "Григорий",
+    "patronymic": "Григорьевич",
+    "balance": -220,
+    "status": "blocked"
+  }
+]

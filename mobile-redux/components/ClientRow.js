@@ -40,8 +40,7 @@ class ClientRow extends React.PureComponent {
   }
 
   handleSave = () => {
-    const balanceValue = this.balanceRef.current.value;
-    const newBalance = balanceValue === "" ? 0 : parseInt(balanceValue, 10) || 0;
+    const newBalance = parseInt(this.balanceRef.current.value) || 0;
     const newStatus = newBalance < 0 ? "blocked" : "active";
 
     const updates = [

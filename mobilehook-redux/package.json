@@ -4,6 +4,7 @@
   "description": "мобильная компания",
   "main": "App.js",
   "scripts": {
+    "start": ".\\node_modules\\.bin\\webpack-dev-server --progress --colors --open",
     "build": ".\\node_modules\\.bin\\webpack",
     "livebuild": ".\\node_modules\\.bin\\webpack-dev-server --progress --colors"
   },
@@ -21,10 +22,12 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "events": "^3.3.0",
     "prop-types": "^15.6.0",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1"
   }
 }

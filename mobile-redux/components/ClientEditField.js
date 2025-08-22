@@ -9,10 +9,7 @@ class ClientEditField extends React.PureComponent {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     placeholder: PropTypes.string.isRequired,
     type: PropTypes.string,
-    inputRef: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-    ]),
+    inputRef: PropTypes.object,
   };
 
   render() {
