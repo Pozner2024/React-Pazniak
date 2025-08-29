@@ -1,0 +1,292 @@
+﻿$banner-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+$address-color: #4a5568;
+$phone-color: #2b6cb0;
+$email-color: #805ad5;
+$website-color: #38a169;
+$text-color: #2d3748;
+$accent-color: #667eea;
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.ShopBanner {
+  background: $banner-bg;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.shop-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .shop-tagline {
+    font-size: 1.2rem;
+    color: #718096;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+}
+
+.shop-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 200px);
+}
+
+// About section styles
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+
+  h2 {
+    color: $accent-color;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  h3 {
+    color: $text-color;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .shop-details {
+    background: #f7fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    border-left: 4px solid $accent-color;
+  }
+}
+
+// Contact section styles
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    color: $accent-color;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-item {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+
+    h3 {
+      color: $text-color;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #4a5568;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  .hours {
+    background: #f7fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid $accent-color;
+
+    h3 {
+      color: $text-color;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        color: #4a5568;
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e2e8f0;
+        text-align: center;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// Cart section styles
+.cart-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    color: $accent-color;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cart-placeholder {
+    background: #f7fafc;
+    padding: 3rem;
+    border-radius: 16px;
+    border: 2px dashed #cbd5e0;
+  }
+
+  .empty-cart {
+    .cart-icon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #718096;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .shop-now-btn {
+      background: $accent-color;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+    }
+  }
+}
+
+// Legacy styles for backward compatibility
+.ShopName {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.ShopAddress {
+  font-size: 1rem;
+  color: $address-color;
+  margin-bottom: 8px;
+}
+
+.ShopPhone {
+  font-size: 1rem;
+  color: $phone-color;
+  margin-bottom: 8px;
+}
+
+.ShopEmail {
+  font-size: 1rem;
+  color: $email-color;
+  margin-bottom: 8px;
+}
+
+.ShopWebsite {
+  font-size: 1rem;
+  color: $website-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .shop-header {
+    padding: 2rem 1rem 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .shop-tagline {
+      font-size: 1rem;
+    }
+  }
+
+  .shop-content {
+    padding: 1rem;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .about-section,
+  .contact-section,
+  .cart-section {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}

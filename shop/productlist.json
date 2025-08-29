@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "Chocolate Gift Set 'Holiday'",
+    "price": 12.99,
+    "imageUrl": "https://m.media-amazon.com/images/I/81FFrcLbgsL._SL1500_.jpg",
+    "stock": 12,
+    "description": "Premium chocolate gift set featuring a selection of artisanal chocolates from around the world. Perfect for special occasions and holidays.",
+    "category": "Confectionery",
+    "brand": "Gourmet Delights"
+  },
+  {
+    "id": 2,
+    "name": "Green Tea 'Spring Aroma'",
+    "price": 5.5,
+    "imageUrl": "https://img.joomcdn.net/c7a0171e177655128f1f14afde5b34cb26e3e88e_original.jpeg",
+    "stock": 25,
+    "description": "Refreshing green tea with delicate spring flavors. Sourced from high-altitude tea gardens for exceptional quality and taste.",
+    "category": "Beverages",
+    "brand": "Mountain Tea Co."
+  },
+  {
+    "id": 3,
+    "name": "Ground Coffee 'Morning'",
+    "price": 7.25,
+    "imageUrl": "https://i.pinimg.com/474x/7f/68/60/7f6860acffb8567ca7af58d264911d55.jpg",
+    "stock": 8,
+    "description": "Rich and aromatic morning blend coffee, perfect for starting your day. Medium roast with notes of chocolate and caramel.",
+    "category": "Beverages",
+    "brand": "Morning Brew"
+  },
+  {
+    "id": 4,
+    "name": "Natural Honey, 500g",
+    "price": 9.99,
+    "imageUrl": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&h=500&fit=crop&crop=center",
+    "stock": 15,
+    "description": "Pure, unprocessed natural honey harvested from local beekeepers. Rich in flavor and perfect for sweetening teas or spreading on toast.",
+    "category": "Natural Products",
+    "brand": "Local Harvest"
+  },
+  {
+    "id": 5,
+    "name": "Oatmeal Cookies with Raisins",
+    "price": 3.8,
+    "imageUrl": "https://brokenovenbaking.com/wp-content/uploads/2023/01/oatmeal-raisin-cookies-6-1.jpg",
+    "stock": 30,
+    "description": "Homemade-style oatmeal cookies filled with plump raisins. Perfectly chewy texture with a hint of cinnamon.",
+    "category": "Bakery",
+    "brand": "Artisan Bakehouse"
+  },
+  {
+    "id": 6,
+    "name": "Almond Biscotti",
+    "price": 4.5,
+    "imageUrl": "https://i.pinimg.com/736x/c4/10/2c/c4102c179503819d8cb29ca4c53cb770.jpg",
+    "stock": 20
+  },
+  {
+    "id": 7,
+    "name": "Dried Fruit Mix",
+    "price": 6.75,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=b221b9b57332e1844551adea0011eace_l-7755899-images-thumbs&n=13",
+    "stock": 18
+  },
+  {
+    "id": 8,
+    "name": "Black Tea 'Classic Blend'",
+    "price": 4.99,
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2485/1434/products/earl_grey_black_800x.jpg?v=1581924329",
+    "stock": 22
+  },
+  {
+    "id": 9,
+    "name": "Hazelnut Spread",
+    "price": 8.25,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=7dec38a2b1e33113634f6ffaa4376fabeb4061a2-5859023-images-thumbs&n=13",
+    "stock": 10
+  },
+  {
+    "id": 10,
+    "name": "Caramel Candies",
+    "price": 2.99,
+    "imageUrl": "https://avatars.mds.yandex.net/i?id=30278b574144435c83d06ec45a279024_l-4614378-images-thumbs&n=13",
+    "stock": 40
+  },
+  {
+    "id": 11,
+    "name": "Organic Lemon Tea",
+    "price": 6.99,
+    "imageUrl": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&h=500&fit=crop&crop=center",
+    "stock": 35,
+    "description": "Refreshing organic herbal tea infused with natural lemon essence. Caffeine-free and perfect for any time of day.",
+    "category": "Beverages",
+    "brand": "Organic Garden"
+  },
+  {
+    "id": 12,
+    "name": "Greek Honey Yogurt",
+    "price": 4.25,
+    "imageUrl": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=500&fit=crop&crop=center",
+    "stock": 28,
+    "description": "Creamy Greek-style yogurt sweetened with natural honey. Rich in protein and probiotics, perfect for breakfast or as a healthy snack.",
+    "category": "Dairy",
+    "brand": "Mediterranean Fresh"
+  }
+]
