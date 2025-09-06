@@ -25,7 +25,7 @@ const productsSlice = createSlice({
     addProduct: (state, action) => {
       const newProduct = {
         ...action.payload,
-        id: Date.now(), // Simple ID generation
+        id: Date.now(),
       };
       state.products.push(newProduct);
     },
@@ -67,7 +67,7 @@ export const {
   restoreProductStock,
 } = productsSlice.actions;
 
-// Selectors
+
 export const selectProducts = (state) => state.products.products;
 export const selectProductsLoading = (state) => state.products.loading;
 export const selectProductsError = (state) => state.products.error;

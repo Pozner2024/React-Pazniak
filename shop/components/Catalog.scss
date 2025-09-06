@@ -2,7 +2,10 @@
 
 .CatalogContainer {
   @include container;
-  padding: $spacing-8 $spacing-4;
+
+  & {
+    padding: $spacing-8 $spacing-4;
+  }
 }
 
 .catalog-header {
@@ -10,13 +13,14 @@
   margin-bottom: $spacing-8;
 
   h2 {
-    color: $gray-900;
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    font-family: $font-family-secondary;
-    margin-bottom: $spacing-3;
-    
     @include responsive-text($font-size-2xl, $font-size-3xl);
+
+    & {
+      color: $gray-900;
+      font-weight: $font-weight-bold;
+      font-family: $font-family-secondary;
+      margin-bottom: $spacing-3;
+    }
   }
 
   p {
@@ -38,7 +42,8 @@
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all $transition-base, opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition: all $transition-base, opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 
   &:hover:not(.removing) {
     transform: translateY(-4px);
@@ -53,8 +58,9 @@
 
   &.removing {
     opacity: 0;
-    transform: scale(0.8) translateY(-20px);
+    transform: scale(0.3) translateY(-50px) rotate(10deg);
     pointer-events: none;
+    transition: all 1s ease-out;
   }
 }
 
@@ -116,7 +122,7 @@
 
 .add-to-cart-btn {
   @include button-base;
-  @include button-size('md');
+  @include button-size("md");
   @include button-variant($primary-color, $white, $primary-light);
   width: 100%;
   font-weight: $font-weight-semibold;

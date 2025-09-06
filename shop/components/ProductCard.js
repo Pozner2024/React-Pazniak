@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useCart } from "../hooks/useCart";
+import Tooltip from "./Tooltip";
 import "./ProductCard.scss";
 
-const ProductCard = ({ product, isOpen, onClose }) => {
+const ProductCard = ({ product, isOpen, onClose, onAddToCart }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addProductToCart } = useCart();
+  const [isClosing, setIsClosing] = useState(false);
 
-  // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
-        onClose();
+        handleAnimatedClose();
       }
     };
 
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden"; // Prevent background scroll
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
@@ -25,21 +24,24 @@ const ProductCard = ({ product, isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
-  // Reset quantity when product changes
   useEffect(() => {
     setQuantity(1);
   }, [product]);
 
+  const handleAnimatedClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      onClose();
+    }, 300); // Время анимации
+  };
+
   if (!isOpen || !product) return null;
 
   const handleAddToCart = () => {
-    const success = addProductToCart(product, quantity);
-    if (success) {
-      // Reset quantity after successful add
+    if (onAddToCart && product && quantity > 0) {
+      onAddToCart(product, quantity);
       setQuantity(1);
-      // Close the modal after successful add
-      onClose();
-      // Optionally show success message
       console.log(`Added ${quantity} of ${product.name} to cart`);
     }
   };
@@ -63,14 +65,14 @@ const ProductCard = ({ product, isOpen, onClose }) => {
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleAnimatedClose();
     }
   };
 
   return (
-    <div className="ProductCardOverlay" onClick={handleOverlayClick}>
-      <div className="ProductCard">
-        <button className="close-button" onClick={onClose} aria-label="Close">
+    <div className={`ProductCardOverlay ${isClosing ? 'closing' : ''}`} onClick={handleOverlayClick}>
+      <div className={`ProductCard ${isClosing ? 'closing' : ''}`}>
+        <button className="close-button" onClick={handleAnimatedClose} aria-label="Close">
           ×
         </button>
 
@@ -96,15 +98,24 @@ const ProductCard = ({ product, isOpen, onClose }) => {
 
             <div className="product-card-stock">
               <span className="stock-label">Available:</span>
-              <span
-                className={`stock-amount ${
-                  product.stock === 0 ? "out-of-stock" : ""
-                }`}
+              <Tooltip
+                text={
+                  product.stock === 0
+                    ? "Product is temporarily unavailable"
+                    : `${product.stock} units available for purchase`
+                }
+                position="right"
               >
-                {product.stock > 0
-                  ? `${product.stock} in stock`
-                  : "Out of stock"}
-              </span>
+                <span
+                  className={`stock-amount ${
+                    product.stock === 0 ? "out-of-stock" : ""
+                  }`}
+                >
+                  {product.stock > 0
+                    ? `${product.stock} in stock`
+                    : "Out of stock"}
+                </span>
+              </Tooltip>
             </div>
 
             {product.stock > 0 && (
@@ -140,14 +151,21 @@ const ProductCard = ({ product, isOpen, onClose }) => {
                   </div>
                 </div>
 
-                <button
-                  onClick={handleAddToCart}
-                  className="add-to-cart-btn"
-                  disabled={product.stock === 0}
+                <Tooltip
+                  text={`Add ${quantity} ${
+                    quantity === 1 ? "item" : "items"
+                  } to shopping cart`}
+                  position="top"
                 >
-                  <span className="btn-icon">🛒</span>
-                  Add to Cart
-                </button>
+                  <button
+                    onClick={handleAddToCart}
+                    className="add-to-cart-btn"
+                    disabled={product.stock === 0}
+                  >
+                    <span className="btn-icon">🛒</span>
+                    Add to Cart
+                  </button>
+                </Tooltip>
               </div>
             )}
 
@@ -180,4 +198,3 @@ const ProductCard = ({ product, isOpen, onClose }) => {
 };
 
 export default ProductCard;
-

@@ -8,7 +8,7 @@ const ProductTable = ({ products: initialProducts }) => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedItemId, setSelectedItemId] = useState(null);
   const [lastSelectedItemId, setLastSelectedItemId] = useState(null);
-  const [mode, setMode] = useState(0); // 0 - no card, 1 - view, 2 - edit, 3 - add
+  const [mode, setMode] = useState(0);
   const [hasChanges, setHasChanges] = useState(false);
 
   const selectItem = (id) => {
@@ -54,7 +54,6 @@ const ProductTable = ({ products: initialProducts }) => {
 
   const saveItem = (productData) => {
     if (mode === 2) {
-      // Edit mode
       const updatedProducts = products.map((product) =>
         product.id === selectedItemId
           ? { ...product, ...productData }
@@ -70,7 +69,6 @@ const ProductTable = ({ products: initialProducts }) => {
       setMode(1);
       setHasChanges(false);
     } else if (mode === 3) {
-      // Add mode
       const newProduct = {
         id: Math.max(...products.map((p) => p.id)) + 1,
         ...productData,
@@ -149,7 +147,7 @@ const ProductTable = ({ products: initialProducts }) => {
           </button>
         </div>
 
-        {/* Card now below the table and button */}
+
         {selectedItem && mode === 1 && (
           <CardView product={selectedItem} />
         )}

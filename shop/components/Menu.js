@@ -7,6 +7,7 @@ const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
 
   const menuItems = [
     { id: "catalog", label: "Catalog" },
+    { id: "reviews", label: "Reviews" },
     { id: "profile", label: "Profile" },
     { id: "about", label: "About Us" },
     { id: "contact", label: "Contact" },
@@ -26,12 +27,10 @@ const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
   return (
     <nav className="Menu">
       <div className="menu-container">
-        {/* Logo/Brand */}
         <div className="menu-brand">
           <h2>🍽️ Gourmet Shop</h2>
         </div>
 
-        {/* Desktop Menu */}
         <ul className="menu-items desktop-menu">
           {menuItems.map((item) => (
             <li
@@ -53,7 +52,6 @@ const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
           ))}
         </ul>
 
-        {/* Mobile Menu Component */}
         <MobileMenu
           isOpen={isMenuOpen}
           onToggle={toggleMobileMenu}

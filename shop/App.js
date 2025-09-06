@@ -4,8 +4,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 
 import ShopInfo from "./components/ShopInfo";
-import products from "./productlist.json"; // products is a variable
-//  that loads data from the json file.
+import products from "./productlist.json";
 
 const App = () => {
   return (

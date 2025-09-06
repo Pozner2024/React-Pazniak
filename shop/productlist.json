@@ -7,7 +7,49 @@
     "stock": 12,
     "description": "Premium chocolate gift set featuring a selection of artisanal chocolates from around the world. Perfect for special occasions and holidays.",
     "category": "Confectionery",
-    "brand": "Gourmet Delights"
+    "brand": "Gourmet Delights",
+    "reviews": [
+      {
+        "id": 1,
+        "customerName": "Anna Peterson",
+        "rating": 5,
+        "comment": "Amazing chocolate set! Ordered it for my husband's birthday - he was delighted. Quality is top-notch!",
+        "date": "2024-01-15",
+        "verified": true,
+        "helpful": 12,
+        "avatar": "👩"
+      },
+      {
+        "id": 2,
+        "customerName": "Michael Wilson",
+        "rating": 4,
+        "comment": "Good chocolates, but the price is steep. Overall, quality justifies the cost.",
+        "date": "2024-01-10",
+        "verified": true,
+        "helpful": 8,
+        "avatar": "👨"
+      },
+      {
+        "id": 3,
+        "customerName": "Elena Smith",
+        "rating": 5,
+        "comment": "Buying for the second time! Great gift for loved ones. Beautiful packaging.",
+        "date": "2024-01-05",
+        "verified": true,
+        "helpful": 15,
+        "avatar": "👩‍💼"
+      },
+      {
+        "id": 4,
+        "customerName": "David Johnson",
+        "rating": 3,
+        "comment": "Expected more for such a price. Chocolate is good, but not outstanding.",
+        "date": "2023-12-28",
+        "verified": false,
+        "helpful": 3,
+        "avatar": "👱‍♂️"
+      }
+    ]
   },
   {
     "id": 2,
@@ -17,7 +59,39 @@
     "stock": 25,
     "description": "Refreshing green tea with delicate spring flavors. Sourced from high-altitude tea gardens for exceptional quality and taste.",
     "category": "Beverages",
-    "brand": "Mountain Tea Co."
+    "brand": "Mountain Tea Co.",
+    "reviews": [
+      {
+        "id": 5,
+        "customerName": "Olivia Brown",
+        "rating": 5,
+        "comment": "Delightful tea! Very delicate taste, perfect for morning tea time.",
+        "date": "2024-01-11",
+        "verified": true,
+        "helpful": 20,
+        "avatar": "👩‍🦰"
+      },
+      {
+        "id": 6,
+        "customerName": "Alexander Evans",
+        "rating": 4,
+        "comment": "Quality green tea. I buy it regularly, always fresh.",
+        "date": "2024-01-08",
+        "verified": true,
+        "helpful": 7,
+        "avatar": "👨‍💻"
+      },
+      {
+        "id": 7,
+        "customerName": "Maria Rodriguez",
+        "rating": 5,
+        "comment": "The best green tea! Amazing aroma, very smooth taste.",
+        "date": "2024-01-03",
+        "verified": true,
+        "helpful": 11,
+        "avatar": "👩‍🎓"
+      }
+    ]
   },
   {
     "id": 3,
@@ -27,7 +101,39 @@
     "stock": 8,
     "description": "Rich and aromatic morning blend coffee, perfect for starting your day. Medium roast with notes of chocolate and caramel.",
     "category": "Beverages",
-    "brand": "Morning Brew"
+    "brand": "Morning Brew",
+    "reviews": [
+      {
+        "id": 8,
+        "customerName": "Sergey Miller",
+        "rating": 5,
+        "comment": "Excellent coffee for morning! Strong, aromatic, energizes for the whole day.",
+        "date": "2024-01-08",
+        "verified": true,
+        "helpful": 16,
+        "avatar": "👨‍🔧"
+      },
+      {
+        "id": 9,
+        "customerName": "Natalie Cooper",
+        "rating": 4,
+        "comment": "Good coffee, but would like a more intense flavor.",
+        "date": "2024-01-02",
+        "verified": true,
+        "helpful": 5,
+        "avatar": "👩‍⚕️"
+      },
+      {
+        "id": 10,
+        "customerName": "Victor Lee",
+        "rating": 5,
+        "comment": "Best morning coffee! I order it regularly.",
+        "date": "2023-12-25",
+        "verified": false,
+        "helpful": 12,
+        "avatar": "👨‍🏫"
+      }
+    ]
   },
   {
     "id": 4,
@@ -37,7 +143,39 @@
     "stock": 15,
     "description": "Pure, unprocessed natural honey harvested from local beekeepers. Rich in flavor and perfect for sweetening teas or spreading on toast.",
     "category": "Natural Products",
-    "brand": "Local Harvest"
+    "brand": "Local Harvest",
+    "reviews": [
+      {
+        "id": 11,
+        "customerName": "Tanya Wolf",
+        "rating": 5,
+        "comment": "Real natural honey! Very tasty, aromatic. I only buy here!",
+        "date": "2024-01-05",
+        "verified": true,
+        "helpful": 9,
+        "avatar": "👩‍🍳"
+      },
+      {
+        "id": 12,
+        "customerName": "Igor Davis",
+        "rating": 4,
+        "comment": "Quality honey, but could be cheaper.",
+        "date": "2023-12-30",
+        "verified": true,
+        "helpful": 2,
+        "avatar": "👨‍🎮"
+      },
+      {
+        "id": 13,
+        "customerName": "Lucy Moore",
+        "rating": 5,
+        "comment": "Excellent honey! I treat my throat with it, helps a lot.",
+        "date": "2023-12-20",
+        "verified": true,
+        "helpful": 14,
+        "avatar": "👵"
+      }
+    ]
   },
   {
     "id": 5,
@@ -47,42 +185,219 @@
     "stock": 30,
     "description": "Homemade-style oatmeal cookies filled with plump raisins. Perfectly chewy texture with a hint of cinnamon.",
     "category": "Bakery",
-    "brand": "Artisan Bakehouse"
+    "brand": "Artisan Bakehouse",
+    "reviews": [
+      {
+        "id": 14,
+        "customerName": "Roman White",
+        "rating": 5,
+        "comment": "Delicious cookies! Reminds me of homemade ones. Kids love them!",
+        "date": "2024-01-02",
+        "verified": false,
+        "helpful": 6,
+        "avatar": "👨‍💼"
+      },
+      {
+        "id": 15,
+        "customerName": "Julia Taylor",
+        "rating": 4,
+        "comment": "Very good cookies, but could use more raisins.",
+        "date": "2023-12-28",
+        "verified": true,
+        "helpful": 4,
+        "avatar": "👩‍🎨"
+      },
+      {
+        "id": 16,
+        "customerName": "Andrew Black",
+        "rating": 5,
+        "comment": "Excellent treat with tea! I buy regularly.",
+        "date": "2023-12-15",
+        "verified": true,
+        "helpful": 8,
+        "avatar": "👨‍🔬"
+      }
+    ]
   },
   {
     "id": 6,
     "name": "Almond Biscotti",
     "price": 4.5,
     "imageUrl": "https://i.pinimg.com/736x/c4/10/2c/c4102c179503819d8cb29ca4c53cb770.jpg",
-    "stock": 20
+    "stock": 20,
+    "description": "Traditional Italian almond biscotti, perfect for dipping in coffee or enjoying as an afternoon treat.",
+    "category": "Bakery",
+    "brand": "Artisan Bakehouse",
+    "reviews": [
+      {
+        "id": 17,
+        "customerName": "Svetlana Gray",
+        "rating": 5,
+        "comment": "Wonderful biscotti! Very crispy, with coffee - delicious!",
+        "date": "2023-12-30",
+        "verified": true,
+        "helpful": 13,
+        "avatar": "👩‍💻"
+      },
+      {
+        "id": 18,
+        "customerName": "Max Powell",
+        "rating": 3,
+        "comment": "Okay, but too many almonds. For enthusiasts only.",
+        "date": "2023-12-25",
+        "verified": false,
+        "helpful": 1,
+        "avatar": "👨‍🎯"
+      }
+    ]
   },
   {
     "id": 7,
     "name": "Dried Fruit Mix",
     "price": 6.75,
     "imageUrl": "https://avatars.mds.yandex.net/i?id=b221b9b57332e1844551adea0011eace_l-7755899-images-thumbs&n=13",
-    "stock": 18
+    "stock": 18,
+    "description": "A delicious mix of premium dried fruits including apricots, dates, figs, and raisins. Perfect healthy snack.",
+    "category": "Natural Products",
+    "brand": "Nature's Best",
+    "reviews": [
+      {
+        "id": 19,
+        "customerName": "Catherine Fox",
+        "rating": 5,
+        "comment": "Excellent dried fruit mix! Very sweet and healthy.",
+        "date": "2023-12-28",
+        "verified": true,
+        "helpful": 10,
+        "avatar": "👩‍🏭"
+      },
+      {
+        "id": 20,
+        "customerName": "Paul Green",
+        "rating": 4,
+        "comment": "Good snack. Quality is good.",
+        "date": "2023-12-20",
+        "verified": true,
+        "helpful": 7,
+        "avatar": "👨‍🏭"
+      },
+      {
+        "id": 21,
+        "customerName": "Valentina King",
+        "rating": 5,
+        "comment": "Wonderful! Buying for the third time already.",
+        "date": "2023-12-15",
+        "verified": true,
+        "helpful": 12,
+        "avatar": "👩‍🔬"
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Black Tea 'Classic Blend'",
     "price": 4.99,
     "imageUrl": "https://cdn.shopify.com/s/files/1/2485/1434/products/earl_grey_black_800x.jpg?v=1581924329",
-    "stock": 22
+    "stock": 22,
+    "description": "A robust and full-bodied black tea blend, perfect for any time of day. Classic English breakfast style.",
+    "category": "Beverages",
+    "brand": "Classic Tea House",
+    "reviews": [
+      {
+        "id": 22,
+        "customerName": "Dennis Clark",
+        "rating": 4,
+        "comment": "Classic black tea. Strong, rich.",
+        "date": "2023-12-25",
+        "verified": true,
+        "helpful": 8,
+        "avatar": "👨‍🚀"
+      },
+      {
+        "id": 23,
+        "customerName": "Irene Parker",
+        "rating": 5,
+        "comment": "Amazing tea! I drink it every morning.",
+        "date": "2023-12-18",
+        "verified": true,
+        "helpful": 15,
+        "avatar": "👩‍🚀"
+      }
+    ]
   },
   {
     "id": 9,
     "name": "Hazelnut Spread",
     "price": 8.25,
     "imageUrl": "https://avatars.mds.yandex.net/i?id=7dec38a2b1e33113634f6ffaa4376fabeb4061a2-5859023-images-thumbs&n=13",
-    "stock": 10
+    "stock": 10,
+    "description": "Creamy hazelnut spread made with premium hazelnuts and natural ingredients. Perfect for breakfast or dessert.",
+    "category": "Confectionery",
+    "brand": "Gourmet Spreads",
+    "reviews": [
+      {
+        "id": 24,
+        "customerName": "Constantine Bell",
+        "rating": 5,
+        "comment": "Love this paste! Very creamy and delicious.",
+        "date": "2023-12-23",
+        "verified": false,
+        "helpful": 11,
+        "avatar": "👨‍🎤"
+      },
+      {
+        "id": 25,
+        "customerName": "Alice Roberts",
+        "rating": 4,
+        "comment": "Good paste, but could be sweeter.",
+        "date": "2023-12-15",
+        "verified": true,
+        "helpful": 6,
+        "avatar": "👩‍🎭"
+      },
+      {
+        "id": 26,
+        "customerName": "Oliver Baker",
+        "rating": 3,
+        "comment": "Average. Few nuts, mostly sugar.",
+        "date": "2023-12-10",
+        "verified": true,
+        "helpful": 3,
+        "avatar": "👨‍🎨"
+      }
+    ]
   },
   {
     "id": 10,
     "name": "Caramel Candies",
     "price": 2.99,
     "imageUrl": "https://avatars.mds.yandex.net/i?id=30278b574144435c83d06ec45a279024_l-4614378-images-thumbs&n=13",
-    "stock": 40
+    "stock": 40,
+    "description": "Soft and chewy caramel candies with a rich, buttery flavor. Made with natural ingredients.",
+    "category": "Confectionery",
+    "brand": "Sweet Delights",
+    "reviews": [
+      {
+        "id": 27,
+        "customerName": "Galina Turner",
+        "rating": 5,
+        "comment": "Wonderful caramels! Very soft and sweet.",
+        "date": "2023-12-20",
+        "verified": true,
+        "helpful": 9,
+        "avatar": "👩‍🌾"
+      },
+      {
+        "id": 28,
+        "customerName": "Arthur Adams",
+        "rating": 4,
+        "comment": "Good candies at an attractive price.",
+        "date": "2023-12-12",
+        "verified": false,
+        "helpful": 5,
+        "avatar": "👨‍🌾"
+      }
+    ]
   },
   {
     "id": 11,
@@ -92,7 +407,39 @@
     "stock": 35,
     "description": "Refreshing organic herbal tea infused with natural lemon essence. Caffeine-free and perfect for any time of day.",
     "category": "Beverages",
-    "brand": "Organic Garden"
+    "brand": "Organic Garden",
+    "reviews": [
+      {
+        "id": 29,
+        "customerName": "Marina Wright",
+        "rating": 5,
+        "comment": "Excellent lemon tea! Refreshing and aromatic.",
+        "date": "2023-12-18",
+        "verified": true,
+        "helpful": 14,
+        "avatar": "👩‍⚖️"
+      },
+      {
+        "id": 30,
+        "customerName": "Stanley Hill",
+        "rating": 4,
+        "comment": "Pleasant taste, helps relax in the evening.",
+        "date": "2023-12-10",
+        "verified": true,
+        "helpful": 6,
+        "avatar": "👨‍⚖️"
+      },
+      {
+        "id": 31,
+        "customerName": "Larisa Stone",
+        "rating": 5,
+        "comment": "Excellent! Natural lemon taste.",
+        "date": "2023-12-05",
+        "verified": true,
+        "helpful": 16,
+        "avatar": "👩‍✈️"
+      }
+    ]
   },
   {
     "id": 12,
@@ -102,6 +449,48 @@
     "stock": 28,
     "description": "Creamy Greek-style yogurt sweetened with natural honey. Rich in protein and probiotics, perfect for breakfast or as a healthy snack.",
     "category": "Dairy",
-    "brand": "Mediterranean Fresh"
+    "brand": "Mediterranean Fresh",
+    "reviews": [
+      {
+        "id": 32,
+        "customerName": "Eugene Ford",
+        "rating": 5,
+        "comment": "Amazing yogurt! Very thick and delicious. I buy regularly for breakfast.",
+        "date": "2023-12-15",
+        "verified": true,
+        "helpful": 18,
+        "avatar": "👨‍✈️"
+      },
+      {
+        "id": 33,
+        "customerName": "Vera Brown",
+        "rating": 4,
+        "comment": "Good yogurt, but would like more honey in the composition.",
+        "date": "2023-12-08",
+        "verified": true,
+        "helpful": 4,
+        "avatar": "👩‍🔧"
+      },
+      {
+        "id": 34,
+        "customerName": "Nick Carter",
+        "rating": 5,
+        "comment": "Excellent! Perfect for diet. Filling and healthy.",
+        "date": "2023-11-30",
+        "verified": false,
+        "helpful": 12,
+        "avatar": "👨‍🚒"
+      },
+      {
+        "id": 35,
+        "customerName": "Tamara Collins",
+        "rating": 5,
+        "comment": "Best Greek yogurt! Very smooth texture, natural taste.",
+        "date": "2023-11-25",
+        "verified": true,
+        "helpful": 22,
+        "avatar": "👩‍🚒"
+      }
+    ]
   }
 ]

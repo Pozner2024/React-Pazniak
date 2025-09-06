@@ -30,7 +30,7 @@ const CardEdit = ({ product, mode, cbSave, cbCancel, onChange }) => {
       valid = false;
     }
 
-    // Validate price - check for empty values and invalid numbers
+
     if (
       data.price === null ||
       data.price === undefined ||
@@ -44,7 +44,7 @@ const CardEdit = ({ product, mode, cbSave, cbCancel, onChange }) => {
       valid = false;
     }
 
-    // Validate stock - check for empty values and invalid numbers
+
     if (
       data.stock === null ||
       data.stock === undefined ||

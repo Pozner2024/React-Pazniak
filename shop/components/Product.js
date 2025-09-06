@@ -9,7 +9,7 @@ const Product = ({
   cbDelete,
 }) => {
   const handleClick = () => {
-    // If there are unsaved changes, ignore click
+
     if (hasChanges) {
       return;
     }
@@ -18,7 +18,7 @@ const Product = ({
 
   const handleEdit = (e) => {
     e.stopPropagation();
-    // If there are unsaved changes, ignore edit
+
     if (hasChanges) {
       return;
     }

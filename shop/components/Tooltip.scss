@@ -1,0 +1,237 @@
+@import "../styles/design-system.scss";
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: $z-tooltip;
+  padding: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-out forwards;
+
+  &--top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+  }
+
+  &--bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+  }
+
+  &--left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8px;
+  }
+
+  &--right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+  }
+}
+
+.tooltip__content {
+  background: $gray-900;
+  color: $white;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+  box-shadow: $shadow-lg;
+  max-width: 250px;
+  text-align: center;
+  line-height: $line-height-tight;
+
+  // Для длинных текстов
+  &.tooltip__content--multiline {
+    white-space: normal;
+    max-width: 200px;
+  }
+}
+
+.tooltip__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+
+  .tooltip--top & {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: $gray-900;
+    border-bottom: 0;
+  }
+
+  .tooltip--bottom & {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: $gray-900;
+    border-top: 0;
+  }
+
+  .tooltip--left & {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: $gray-900;
+    border-right: 0;
+  }
+
+  .tooltip--right & {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: $gray-900;
+    border-left: 0;
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+// Вариации для разных позиций
+.tooltip--bottom {
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+
+.tooltip--left {
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50%) translateX(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+}
+
+.tooltip--right {
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50%) translateX(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+}
+
+// Accessibility: Hide tooltips when user prefers reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    animation: none;
+    transition: opacity 0.1s ease;
+  }
+
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+// Тематические варианты tooltip
+.tooltip--success {
+  .tooltip__content {
+    background: $success;
+    color: $white;
+  }
+
+  .tooltip__arrow {
+    .tooltip--top & {
+      border-top-color: $success;
+    }
+    .tooltip--bottom & {
+      border-bottom-color: $success;
+    }
+    .tooltip--left & {
+      border-left-color: $success;
+    }
+    .tooltip--right & {
+      border-right-color: $success;
+    }
+  }
+}
+
+.tooltip--warning {
+  .tooltip__content {
+    background: $warning;
+    color: $white;
+  }
+
+  .tooltip__arrow {
+    .tooltip--top & {
+      border-top-color: $warning;
+    }
+    .tooltip--bottom & {
+      border-bottom-color: $warning;
+    }
+    .tooltip--left & {
+      border-left-color: $warning;
+    }
+    .tooltip--right & {
+      border-right-color: $warning;
+    }
+  }
+}
+
+.tooltip--error {
+  .tooltip__content {
+    background: $error;
+    color: $white;
+  }
+
+  .tooltip__arrow {
+    .tooltip--top & {
+      border-top-color: $error;
+    }
+    .tooltip--bottom & {
+      border-bottom-color: $error;
+    }
+    .tooltip--left & {
+      border-left-color: $error;
+    }
+    .tooltip--right & {
+      border-right-color: $error;
+    }
+  }
+}

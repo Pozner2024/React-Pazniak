@@ -13,12 +13,12 @@ const MobileMenu = ({
     if (onMenuSelect) {
       onMenuSelect(itemId);
     }
-    onToggle(); // Close menu after selection
+    onToggle();
   };
 
   return (
     <div className="mobile-menu-wrapper">
-      {/* Mobile Menu Toggle Button */}
+
       <button
         className="mobile-menu-toggle"
         onClick={onToggle}
@@ -32,10 +32,10 @@ const MobileMenu = ({
         </span>
       </button>
 
-      {/* Mobile Menu Overlay */}
+
       {isOpen && <div className="mobile-menu-overlay" onClick={onToggle} />}
 
-      {/* Mobile Menu */}
+
       <nav className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-menu-header">
           <h3>Menu</h3>

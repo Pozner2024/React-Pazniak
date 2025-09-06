@@ -10,10 +10,13 @@
 
   .menu-container {
     @include container;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: $navbar-height;
+    
+    & {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: $navbar-height;
+    }
   }
 
   .menu-brand {

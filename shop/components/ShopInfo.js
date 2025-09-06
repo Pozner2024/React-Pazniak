@@ -5,16 +5,27 @@ import ProductTable from "./ProductTable";
 import Catalog from "./Catalog";
 import Profile from "./Profile";
 import Cart from "./Cart";
+import Reviews from "./Reviews";
 import Footer from "./Footer";
 import "./ShopInfo.scss";
 
-// Redux actions
-import { setProducts, updateProductStock, restoreProductStock } from "../store/slices/productsSlice";
-import { addToCart as addToCartAction, updateCartQuantity as updateCartQuantityAction, removeFromCart as removeFromCartAction, clearCart as clearCartAction } from "../store/slices/cartSlice";
+import {
+  setProducts,
+  updateProductStock,
+  restoreProductStock,
+} from "../store/slices/productsSlice";
+import {
+  addToCart as addToCartAction,
+  updateCartQuantity as updateCartQuantityAction,
+  removeFromCart as removeFromCartAction,
+  clearCart as clearCartAction,
+} from "../store/slices/cartSlice";
 
-// Redux selectors
 import { selectProducts } from "../store/slices/productsSlice";
-import { selectCartItems, selectCartItemsCount } from "../store/slices/cartSlice";
+import {
+  selectCartItems,
+  selectCartItemsCount,
+} from "../store/slices/cartSlice";
 
 const ShopInfo = ({
   name,
@@ -26,13 +37,11 @@ const ShopInfo = ({
 }) => {
   const dispatch = useDispatch();
   const [activeSection, setActiveSection] = useState("catalog");
-  
-  // Get data from Redux store
+
   const products = useSelector(selectProducts);
   const cartItems = useSelector(selectCartItems);
   const totalCartItems = useSelector(selectCartItemsCount);
 
-  // Initialize products in Redux store
   useEffect(() => {
     if (initialProducts && initialProducts.length > 0) {
       dispatch(setProducts(initialProducts));
@@ -44,7 +53,6 @@ const ShopInfo = ({
   };
 
   const addToCart = (product, quantity = 1) => {
-    // Check if there's enough stock
     const currentProduct = products.find((p) => p.id === product.id);
     if (!currentProduct || currentProduct.stock < quantity) {
       console.log(
@@ -55,13 +63,11 @@ const ShopInfo = ({
           ", Requested: " +
           quantity
       );
-      return; // Not enough stock
+      return;
     }
 
-    // Add to cart using Redux
     dispatch(addToCartAction({ product, quantity }));
-    
-    // Update product stock using Redux
+
     dispatch(updateProductStock({ id: product.id, quantity }));
   };
 
@@ -71,13 +77,11 @@ const ShopInfo = ({
       return;
     }
 
-    // Find current cart item to calculate difference
     const currentCartItem = cartItems.find((item) => item.id === productId);
     if (!currentCartItem) return;
 
     const quantityDifference = newQuantity - currentCartItem.quantity;
 
-    // If increasing quantity, check stock availability
     if (quantityDifference > 0) {
       const currentProduct = products.find((p) => p.id === productId);
       if (!currentProduct || currentProduct.stock < quantityDifference) {
@@ -87,40 +91,44 @@ const ShopInfo = ({
             ", Requested increase: " +
             quantityDifference
         );
-        return; // Not enough stock
+        return;
       }
     }
 
-    // Update cart using Redux
     dispatch(updateCartQuantityAction({ productId, quantity: newQuantity }));
 
-    // Update product stock using Redux
     if (quantityDifference > 0) {
-      dispatch(updateProductStock({ id: productId, quantity: quantityDifference }));
+      dispatch(
+        updateProductStock({ id: productId, quantity: quantityDifference })
+      );
     } else {
-      dispatch(restoreProductStock({ id: productId, quantity: Math.abs(quantityDifference) }));
+      dispatch(
+        restoreProductStock({
+          id: productId,
+          quantity: Math.abs(quantityDifference),
+        })
+      );
     }
   };
 
   const removeFromCart = (productId) => {
-    // Find the item to get its quantity
     const itemToRemove = cartItems.find((item) => item.id === productId);
     if (!itemToRemove) return;
 
-    // Return items to stock using Redux
-    dispatch(restoreProductStock({ id: productId, quantity: itemToRemove.quantity }));
+    dispatch(
+      restoreProductStock({ id: productId, quantity: itemToRemove.quantity })
+    );
 
-    // Remove from cart using Redux
     dispatch(removeFromCartAction(productId));
   };
 
   const clearCart = () => {
-    // Return all items from cart back to stock using Redux
     cartItems.forEach((cartItem) => {
-      dispatch(restoreProductStock({ id: cartItem.id, quantity: cartItem.quantity }));
+      dispatch(
+        restoreProductStock({ id: cartItem.id, quantity: cartItem.quantity })
+      );
     });
 
-    // Clear the cart using Redux
     dispatch(clearCartAction());
   };
 
@@ -139,6 +147,8 @@ const ShopInfo = ({
             onClearCart={clearCart}
           />
         );
+      case "reviews":
+        return <Reviews />;
       case "about":
         return (
           <div className="about-section">
@@ -220,8 +230,6 @@ const ShopInfo = ({
         return <ProductTable products={products} />;
     }
   };
-
-
 
   return (
     <div className="ShopBanner">

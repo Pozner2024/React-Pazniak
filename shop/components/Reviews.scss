@@ -1,0 +1,461 @@
+@import "../styles/design-system.scss";
+
+.Reviews {
+  @include container;
+
+  & {
+    padding: $spacing-8 $spacing-4;
+  }
+
+  // Заголовок
+  .reviews-header {
+    text-align: center;
+    margin-bottom: $spacing-8;
+
+    h1 {
+      @include responsive-text(2.5rem, 3rem);
+
+      & {
+        font-weight: 700;
+        color: $gray-900;
+        margin-bottom: $spacing-2;
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    .reviews-subtitle {
+      color: $gray-600;
+      font-size: 1.1rem;
+
+      .count {
+        font-weight: 600;
+        color: $primary-color;
+      }
+    }
+  }
+
+  // Панель управления
+  .reviews-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+    margin-bottom: $spacing-6;
+    padding: $spacing-4;
+    background: $white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    border: 1px solid $gray-200;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .filter-group,
+    .sort-group {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-1;
+
+      label {
+        font-weight: 500;
+        color: $gray-700;
+        font-size: 0.9rem;
+      }
+
+      select {
+        padding: $spacing-2 $spacing-3;
+        border: 2px solid $gray-300;
+        border-radius: $radius-md;
+        background: $white;
+        color: $gray-900;
+        font-size: 0.9rem;
+        transition: all $transition-base;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+        }
+
+        &:hover {
+          border-color: $gray-400;
+        }
+      }
+    }
+  }
+
+  // Статистика
+  .reviews-stats {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-8;
+    margin-bottom: $spacing-8;
+    padding: $spacing-6;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    border-radius: $radius-xl;
+    color: $white;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: $spacing-4;
+      text-align: center;
+    }
+
+    .stat-item {
+      text-align: center;
+
+      .stat-value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: $spacing-1;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  // Сетка отзывов
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: $spacing-6;
+    margin-bottom: $spacing-8;
+    // Оптимизация для производительности
+    contain: layout style;
+    will-change: contents;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: $spacing-4;
+    }
+  }
+
+  // Карточка отзыва
+  .review-card {
+    background: $white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    border: 1px solid $gray-200;
+    padding: $spacing-5;
+    // Оптимизированные transitions - только нужные свойства
+    transition: box-shadow $transition-base, transform $transition-base;
+    animation: fadeInUp 0.6s ease-out both;
+    position: relative;
+    overflow: hidden;
+    // GPU-ускорение
+    will-change: transform, box-shadow;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+      transform: scaleX(0);
+      transition: transform $transition-base;
+      transform-origin: left;
+      // GPU-ускорение для псевдоэлемента
+      will-change: transform;
+    }
+
+    &:hover {
+      // Используем translate3d для GPU-ускорения
+      transform: translate3d(0, -2px, 0);
+      box-shadow: $shadow-lg;
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &.animating {
+      animation: pulse 0.3s ease-in-out;
+    }
+
+    // Заголовок отзыва
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: $spacing-4;
+
+      .customer-info {
+        display: flex;
+        align-items: flex-start;
+
+        .customer-details {
+          .customer-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $gray-900;
+            margin: 0 0 $spacing-1 0;
+          }
+
+          .rating {
+            display: flex;
+            gap: 2px;
+
+            .star {
+              color: $gray-300;
+              font-size: 1rem;
+              // Убираем анимацию на звездах для производительности
+              // transition: color 0.2s ease;
+
+              &.filled {
+                color: $warning;
+                // Убираем scale - избыточная анимация
+                // transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+
+      .review-meta {
+        text-align: right;
+        font-size: 0.8rem;
+
+        .date {
+          color: $gray-500;
+          display: block;
+          margin-bottom: $spacing-1;
+        }
+
+        .verified {
+          color: $success;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+          background: rgba($success, 0.1);
+          padding: 2px 6px;
+          border-radius: $radius-sm;
+        }
+      }
+    }
+
+    // Контент отзыва
+    .review-content {
+      margin-bottom: $spacing-4;
+
+      .product-name {
+        font-size: 0.9rem;
+        color: $primary-color;
+        font-weight: 500;
+        margin-bottom: $spacing-2;
+        background: rgba($primary-color, 0.1);
+        padding: $spacing-1 $spacing-2;
+        border-radius: $radius-sm;
+        display: inline-block;
+      }
+
+      .comment {
+        color: $gray-700;
+        line-height: 1.6;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+    }
+
+    // Футер отзыва
+    .review-footer {
+      display: flex;
+      align-items: center;
+      gap: $spacing-2;
+      padding-top: $spacing-3;
+      border-top: 1px solid $gray-200;
+
+      .like-btn {
+        display: flex;
+        align-items: center;
+        gap: $spacing-1;
+        background: transparent;
+        border: 2px solid $gray-300;
+        border-radius: $radius-full;
+        padding: $spacing-2 $spacing-3;
+        cursor: pointer;
+        transition: all $transition-base;
+        font-size: 0.9rem;
+
+        &:hover {
+          border-color: $primary-color;
+          background: rgba($primary-color, 0.05);
+        }
+
+        &.liked {
+          border-color: $primary-color;
+          background: $primary-color;
+          color: $white;
+
+          .like-icon {
+            // Оптимизированный GPU-ускоренный scale
+            transform: scale3d(1.2, 1.2, 1);
+          }
+        }
+
+        &.animating {
+          animation: likeAnimation 0.3s ease-in-out;
+        }
+
+        .like-icon {
+          // Только transform для performance
+          transition: transform 0.2s ease;
+          will-change: transform;
+        }
+
+        .like-count {
+          font-weight: 500;
+          min-width: 20px;
+          text-align: center;
+        }
+      }
+
+      .helpful-text {
+        color: $gray-500;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // Кнопка "Загрузить еще"
+  .load-more-container {
+    text-align: center;
+    margin-top: $spacing-8;
+
+    .load-more-btn {
+      @include button-base;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      color: $white;
+      padding: $spacing-3 $spacing-8;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: $radius-full;
+      border: none;
+      cursor: pointer;
+      transition: all $transition-base;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+
+      &:hover {
+        // GPU-ускоренный transform
+        transform: translate3d(0, -2px, 0);
+        box-shadow: $shadow-lg;
+
+        &::before {
+          left: 100%;
+        }
+      }
+
+      &:active {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  // Сообщение "Ничего не найдено"
+  .no-results {
+    text-align: center;
+    padding: $spacing-8;
+    color: $gray-500;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-2;
+      color: $gray-700;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+}
+
+// Оптимизированные анимации для GPU-ускорения
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    // GPU-ускоренный translate3d
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    // GPU-ускоренный scale3d
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.02, 1.02, 1);
+  }
+}
+
+@keyframes likeAnimation {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .Reviews {
+    padding: $spacing-4 $spacing-2;
+
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .review-card {
+      padding: $spacing-4;
+
+      .review-header {
+        flex-direction: column;
+        gap: $spacing-3;
+        align-items: flex-start;
+
+        .review-meta {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

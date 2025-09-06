@@ -1,4 +1,5 @@
 import React from "react";
+import Tooltip from "./Tooltip";
 import "./Cart.scss";
 
 const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem, onClearCart }) => {
@@ -70,13 +71,14 @@ const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem, onClearCart }) => {
                   ${(item.price * item.quantity).toFixed(2)}
                 </div>
 
-                <button
-                  onClick={() => onRemoveItem(item.id)}
-                  className="remove-btn"
-                  title="Remove item"
-                >
-                  ✕
-                </button>
+                <Tooltip text={`Remove ${item.name} from cart`} position="left">
+                  <button
+                    onClick={() => onRemoveItem(item.id)}
+                    className="remove-btn"
+                  >
+                    ✕
+                  </button>
+                </Tooltip>
               </div>
             </div>
           ))}
