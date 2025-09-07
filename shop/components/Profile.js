@@ -1,3 +1,4 @@
+//Компонент Profile отвечает за административную панель управления магазином.
 import React from "react";
 import ProductTable from "./ProductTable";
 import "./Profile.scss";

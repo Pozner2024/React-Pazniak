@@ -34,9 +34,7 @@ const Tooltip = ({ children, text, position = "top", delay = 300 }) => {
       {children}
       {isVisible && (
         <div className={`tooltip tooltip--${position}`} role="tooltip">
-          <div className="tooltip__content">
-            {text}
-          </div>
+          <div className="tooltip__content">{text}</div>
           <div className="tooltip__arrow"></div>
         </div>
       )}

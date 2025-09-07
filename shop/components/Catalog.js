@@ -1,3 +1,4 @@
+//Компонент Catalog отвечает за отображение каталога товаров в интернет-магазине
 import React, { useState } from "react";
 import "./Catalog.scss";
 import CardView from "./CardView";
@@ -24,17 +25,14 @@ const Catalog = ({ products, onAddToCart }) => {
 
   const handleAddToCart = (product, event) => {
     event.stopPropagation();
-    // Open product card instead of immediately adding to cart
     openProductCard(product);
   };
 
   const handleActualAddToCart = (product, quantity) => {
     if (onAddToCart) {
-      // Call the parent's onAddToCart with the selected quantity
       onAddToCart(product, quantity);
     }
 
-    // Close the product card
     closeProductCard();
   };
 

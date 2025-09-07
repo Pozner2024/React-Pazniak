@@ -1,3 +1,4 @@
+//Главная навигация сайта интернет-магазина с адаптивным дизайном
 import React, { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import "./Menu.scss";

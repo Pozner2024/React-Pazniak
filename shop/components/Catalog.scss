@@ -1,4 +1,4 @@
-@import "../styles/design-system.scss";
+@import "./design-system.scss";
 
 .CatalogContainer {
   @include container;
@@ -188,14 +188,12 @@
   }
 }
 
-// Tablet styles
 @media (max-width: 1024px) and (min-width: 769px) {
   .catalog-grid {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 }
 
-// Animation for grid items
 .catalog-item {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;

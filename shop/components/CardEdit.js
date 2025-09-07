@@ -1,3 +1,4 @@
+//Компонент CardEdit отвечает за редактирование и добавление товаров в интернет-магазине
 import React, { useState, useEffect } from "react";
 import "./CardEdit.scss";
 
@@ -30,7 +31,6 @@ const CardEdit = ({ product, mode, cbSave, cbCancel, onChange }) => {
       valid = false;
     }
 
-
     if (
       data.price === null ||
       data.price === undefined ||
@@ -43,7 +43,6 @@ const CardEdit = ({ product, mode, cbSave, cbCancel, onChange }) => {
       priceError = "Price must be greater than 0";
       valid = false;
     }
-
 
     if (
       data.stock === null ||

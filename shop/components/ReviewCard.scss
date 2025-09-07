@@ -1,0 +1,150 @@
+.review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &.animating {
+    transform: scale(1.02);
+  }
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-details {
+  .customer-name {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .rating {
+    display: flex;
+    gap: 2px;
+
+    .star {
+      font-size: 1rem;
+      color: #ddd;
+
+      &.filled {
+        color: #ffc107;
+      }
+    }
+  }
+}
+
+.review-meta {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #666;
+
+  .date {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .verified {
+    background: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+.review-content {
+  margin-bottom: 15px;
+
+  .product-name {
+    font-weight: 600;
+    color: #007bff;
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+  }
+
+  .comment {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+  }
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.like-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+
+  &:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+  &.liked {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+
+    .like-icon {
+      transform: scale(1.2);
+    }
+  }
+
+  &.animating {
+    transform: scale(0.95);
+  }
+
+  .like-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .like-count {
+    font-weight: 500;
+  }
+}
+
+.helpful-text {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

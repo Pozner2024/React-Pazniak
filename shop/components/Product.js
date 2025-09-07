@@ -1,3 +1,5 @@
+//Компонент Product отвечает за отображение одной строки товара в таблице
+//  с возможностями управления
 import React from "react";
 
 const Product = ({
@@ -9,7 +11,6 @@ const Product = ({
   cbDelete,
 }) => {
   const handleClick = () => {
-
     if (hasChanges) {
       return;
     }

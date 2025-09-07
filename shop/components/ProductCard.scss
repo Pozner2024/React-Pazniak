@@ -1,4 +1,4 @@
-@import "../styles/design-system.scss";
+@import "./design-system.scss";
 
 .ProductCardOverlay {
   position: fixed;
@@ -282,7 +282,6 @@
       background: $gray-50;
     }
 
-    // Hide number input arrows
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -413,7 +412,6 @@
   }
 }
 
-// Accessibility improvements
 @media (prefers-reduced-motion: reduce) {
   .ProductCardOverlay,
   .ProductCard {
@@ -430,4 +428,3 @@
     }
   }
 }
-

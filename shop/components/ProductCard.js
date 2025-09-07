@@ -1,3 +1,5 @@
+//Компонент ProductCard отвечает за детальную карточку товара в модальном окне.
+//  Это полнофункциональный интерфейс для просмотра и добавления товара в корзину.
 import React, { useState, useEffect } from "react";
 import Tooltip from "./Tooltip";
 import "./ProductCard.scss";
@@ -70,9 +72,16 @@ const ProductCard = ({ product, isOpen, onClose, onAddToCart }) => {
   };
 
   return (
-    <div className={`ProductCardOverlay ${isClosing ? 'closing' : ''}`} onClick={handleOverlayClick}>
-      <div className={`ProductCard ${isClosing ? 'closing' : ''}`}>
-        <button className="close-button" onClick={handleAnimatedClose} aria-label="Close">
+    <div
+      className={`ProductCardOverlay ${isClosing ? "closing" : ""}`}
+      onClick={handleOverlayClick}
+    >
+      <div className={`ProductCard ${isClosing ? "closing" : ""}`}>
+        <button
+          className="close-button"
+          onClick={handleAnimatedClose}
+          aria-label="Close"
+        >
           ×
         </button>
 

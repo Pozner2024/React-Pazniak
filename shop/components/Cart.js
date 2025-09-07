@@ -1,3 +1,4 @@
+//Компонент Cart отвечает за корзину покупок в интернет-магазине
 import React from "react";
 import Tooltip from "./Tooltip";
 import "./Cart.scss";

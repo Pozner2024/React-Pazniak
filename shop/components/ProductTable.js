@@ -43,9 +43,7 @@ const ProductTable = ({ products: initialProducts }) => {
   };
 
   const deleteItem = (deletedId) => {
-    const newProducts = products.filter(
-      (product) => product.id !== deletedId
-    );
+    const newProducts = products.filter((product) => product.id !== deletedId);
     setProducts(newProducts);
     setSelectedItemId(null);
     setMode(0);
@@ -55,9 +53,7 @@ const ProductTable = ({ products: initialProducts }) => {
   const saveItem = (productData) => {
     if (mode === 2) {
       const updatedProducts = products.map((product) =>
-        product.id === selectedItemId
-          ? { ...product, ...productData }
-          : product
+        product.id === selectedItemId ? { ...product, ...productData } : product
       );
       setProducts(updatedProducts);
       setSelectedItemId(
@@ -91,7 +87,7 @@ const ProductTable = ({ products: initialProducts }) => {
     setLastSelectedItemId(null);
     setMode(
       (lastSelectedItemId !== null && lastSelectedItemId !== undefined) ||
-      selectedItemId
+        selectedItemId
         ? 1
         : 0
     );
@@ -102,9 +98,7 @@ const ProductTable = ({ products: initialProducts }) => {
     setHasChanges(true);
   };
 
-  const selectedItem = products.find(
-    (item) => item.id === selectedItemId
-  );
+  const selectedItem = products.find((item) => item.id === selectedItemId);
 
   return (
     <div className="ProductTableContainer">
@@ -124,9 +118,7 @@ const ProductTable = ({ products: initialProducts }) => {
               <Product
                 key={product.id}
                 product={product}
-                isSelected={
-                  product.id === selectedItemId && mode === 1
-                }
+                isSelected={product.id === selectedItemId && mode === 1}
                 mode={mode}
                 hasChanges={hasChanges}
                 cbSelect={selectItem}
@@ -147,10 +139,7 @@ const ProductTable = ({ products: initialProducts }) => {
           </button>
         </div>
 
-
-        {selectedItem && mode === 1 && (
-          <CardView product={selectedItem} />
-        )}
+        {selectedItem && mode === 1 && <CardView product={selectedItem} />}
 
         {mode === 2 && (
           <CardEdit

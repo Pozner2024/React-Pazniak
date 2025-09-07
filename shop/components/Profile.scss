@@ -98,7 +98,6 @@
   }
 }
 
-// Mobile styles
 @media (max-width: 768px) {
   .ProfileContainer {
     padding: 1rem;
@@ -162,14 +161,12 @@
   }
 }
 
-// Tablet styles
 @media (max-width: 1024px) and (min-width: 769px) {
   .admin-stats {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// Animation
 .admin-card {
   animation: slideInFromLeft 0.6s ease;
 }

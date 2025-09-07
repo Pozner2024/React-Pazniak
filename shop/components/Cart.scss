@@ -27,7 +27,7 @@
   padding: 3rem 2rem;
   background: #f8f9fa;
   border-radius: 16px;
-  
+
   .empty-cart-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -243,7 +243,6 @@
   }
 }
 
-// Mobile styles
 @media (max-width: 768px) {
   .CartContainer {
     padding: 1rem;
@@ -323,7 +322,6 @@
   }
 }
 
-// Animation for cart items
 .cart-item {
   opacity: 0;
   animation: slideInFromLeft 0.5s ease forwards;

@@ -1,4 +1,4 @@
-@import "../styles/design-system.scss";
+@import "./design-system.scss";
 
 .Menu {
   background: $gradient-primary;
@@ -10,7 +10,7 @@
 
   .menu-container {
     @include container;
-    
+
     & {
       display: flex;
       justify-content: space-between;
@@ -51,7 +51,7 @@
 
   .menu-link {
     @include button-base;
-    @include button-size('md');
+    @include button-size("md");
     background: transparent;
     color: $white;
     border-radius: $radius-lg;
@@ -97,7 +97,6 @@
     animation: pulse 2s infinite;
   }
 
-  // Mobile styles
   @media (max-width: 768px) {
     .menu-brand h2 {
       font-size: 1.3rem;
@@ -108,7 +107,6 @@
     }
   }
 
-  // Tablet styles
   @media (max-width: 1024px) and (min-width: 769px) {
     .menu-link {
       padding: 0.5rem 0.8rem;
@@ -117,7 +115,6 @@
   }
 }
 
-// Animation for menu items
 @keyframes slideIn {
   from {
     opacity: 0;

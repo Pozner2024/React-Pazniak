@@ -16,8 +16,7 @@
         "comment": "Amazing chocolate set! Ordered it for my husband's birthday - he was delighted. Quality is top-notch!",
         "date": "2024-01-15",
         "verified": true,
-        "helpful": 12,
-        "avatar": "👩"
+        "helpful": 12
       },
       {
         "id": 2,
@@ -26,8 +25,7 @@
         "comment": "Good chocolates, but the price is steep. Overall, quality justifies the cost.",
         "date": "2024-01-10",
         "verified": true,
-        "helpful": 8,
-        "avatar": "👨"
+        "helpful": 8
       },
       {
         "id": 3,
@@ -36,8 +34,7 @@
         "comment": "Buying for the second time! Great gift for loved ones. Beautiful packaging.",
         "date": "2024-01-05",
         "verified": true,
-        "helpful": 15,
-        "avatar": "👩‍💼"
+        "helpful": 15
       },
       {
         "id": 4,
@@ -46,8 +43,7 @@
         "comment": "Expected more for such a price. Chocolate is good, but not outstanding.",
         "date": "2023-12-28",
         "verified": false,
-        "helpful": 3,
-        "avatar": "👱‍♂️"
+        "helpful": 3
       }
     ]
   },
@@ -68,8 +64,7 @@
         "comment": "Delightful tea! Very delicate taste, perfect for morning tea time.",
         "date": "2024-01-11",
         "verified": true,
-        "helpful": 20,
-        "avatar": "👩‍🦰"
+        "helpful": 20
       },
       {
         "id": 6,
@@ -78,8 +73,7 @@
         "comment": "Quality green tea. I buy it regularly, always fresh.",
         "date": "2024-01-08",
         "verified": true,
-        "helpful": 7,
-        "avatar": "👨‍💻"
+        "helpful": 7
       },
       {
         "id": 7,
@@ -88,8 +82,7 @@
         "comment": "The best green tea! Amazing aroma, very smooth taste.",
         "date": "2024-01-03",
         "verified": true,
-        "helpful": 11,
-        "avatar": "👩‍🎓"
+        "helpful": 11
       }
     ]
   },
@@ -110,8 +103,7 @@
         "comment": "Excellent coffee for morning! Strong, aromatic, energizes for the whole day.",
         "date": "2024-01-08",
         "verified": true,
-        "helpful": 16,
-        "avatar": "👨‍🔧"
+        "helpful": 16
       },
       {
         "id": 9,
@@ -120,8 +112,7 @@
         "comment": "Good coffee, but would like a more intense flavor.",
         "date": "2024-01-02",
         "verified": true,
-        "helpful": 5,
-        "avatar": "👩‍⚕️"
+        "helpful": 5
       },
       {
         "id": 10,
@@ -130,8 +121,7 @@
         "comment": "Best morning coffee! I order it regularly.",
         "date": "2023-12-25",
         "verified": false,
-        "helpful": 12,
-        "avatar": "👨‍🏫"
+        "helpful": 12
       }
     ]
   },
@@ -152,8 +142,7 @@
         "comment": "Real natural honey! Very tasty, aromatic. I only buy here!",
         "date": "2024-01-05",
         "verified": true,
-        "helpful": 9,
-        "avatar": "👩‍🍳"
+        "helpful": 9
       },
       {
         "id": 12,
@@ -162,8 +151,7 @@
         "comment": "Quality honey, but could be cheaper.",
         "date": "2023-12-30",
         "verified": true,
-        "helpful": 2,
-        "avatar": "👨‍🎮"
+        "helpful": 2
       },
       {
         "id": 13,
@@ -172,8 +160,7 @@
         "comment": "Excellent honey! I treat my throat with it, helps a lot.",
         "date": "2023-12-20",
         "verified": true,
-        "helpful": 14,
-        "avatar": "👵"
+        "helpful": 14
       }
     ]
   },
@@ -194,8 +181,7 @@
         "comment": "Delicious cookies! Reminds me of homemade ones. Kids love them!",
         "date": "2024-01-02",
         "verified": false,
-        "helpful": 6,
-        "avatar": "👨‍💼"
+        "helpful": 6
       },
       {
         "id": 15,
@@ -204,8 +190,7 @@
         "comment": "Very good cookies, but could use more raisins.",
         "date": "2023-12-28",
         "verified": true,
-        "helpful": 4,
-        "avatar": "👩‍🎨"
+        "helpful": 4
       },
       {
         "id": 16,
@@ -214,8 +199,7 @@
         "comment": "Excellent treat with tea! I buy regularly.",
         "date": "2023-12-15",
         "verified": true,
-        "helpful": 8,
-        "avatar": "👨‍🔬"
+        "helpful": 8
       }
     ]
   },
@@ -236,8 +220,7 @@
         "comment": "Wonderful biscotti! Very crispy, with coffee - delicious!",
         "date": "2023-12-30",
         "verified": true,
-        "helpful": 13,
-        "avatar": "👩‍💻"
+        "helpful": 13
       },
       {
         "id": 18,
@@ -246,8 +229,7 @@
         "comment": "Okay, but too many almonds. For enthusiasts only.",
         "date": "2023-12-25",
         "verified": false,
-        "helpful": 1,
-        "avatar": "👨‍🎯"
+        "helpful": 1
       }
     ]
   },
@@ -268,8 +250,7 @@
         "comment": "Excellent dried fruit mix! Very sweet and healthy.",
         "date": "2023-12-28",
         "verified": true,
-        "helpful": 10,
-        "avatar": "👩‍🏭"
+        "helpful": 10
       },
       {
         "id": 20,
@@ -278,8 +259,7 @@
         "comment": "Good snack. Quality is good.",
         "date": "2023-12-20",
         "verified": true,
-        "helpful": 7,
-        "avatar": "👨‍🏭"
+        "helpful": 7
       },
       {
         "id": 21,
@@ -288,8 +268,7 @@
         "comment": "Wonderful! Buying for the third time already.",
         "date": "2023-12-15",
         "verified": true,
-        "helpful": 12,
-        "avatar": "👩‍🔬"
+        "helpful": 12
       }
     ]
   },
@@ -310,8 +289,7 @@
         "comment": "Classic black tea. Strong, rich.",
         "date": "2023-12-25",
         "verified": true,
-        "helpful": 8,
-        "avatar": "👨‍🚀"
+        "helpful": 8
       },
       {
         "id": 23,
@@ -320,8 +298,7 @@
         "comment": "Amazing tea! I drink it every morning.",
         "date": "2023-12-18",
         "verified": true,
-        "helpful": 15,
-        "avatar": "👩‍🚀"
+        "helpful": 15
       }
     ]
   },
@@ -342,8 +319,7 @@
         "comment": "Love this paste! Very creamy and delicious.",
         "date": "2023-12-23",
         "verified": false,
-        "helpful": 11,
-        "avatar": "👨‍🎤"
+        "helpful": 11
       },
       {
         "id": 25,
@@ -352,8 +328,7 @@
         "comment": "Good paste, but could be sweeter.",
         "date": "2023-12-15",
         "verified": true,
-        "helpful": 6,
-        "avatar": "👩‍🎭"
+        "helpful": 6
       },
       {
         "id": 26,
@@ -362,8 +337,7 @@
         "comment": "Average. Few nuts, mostly sugar.",
         "date": "2023-12-10",
         "verified": true,
-        "helpful": 3,
-        "avatar": "👨‍🎨"
+        "helpful": 3
       }
     ]
   },
@@ -384,8 +358,7 @@
         "comment": "Wonderful caramels! Very soft and sweet.",
         "date": "2023-12-20",
         "verified": true,
-        "helpful": 9,
-        "avatar": "👩‍🌾"
+        "helpful": 9
       },
       {
         "id": 28,
@@ -394,8 +367,7 @@
         "comment": "Good candies at an attractive price.",
         "date": "2023-12-12",
         "verified": false,
-        "helpful": 5,
-        "avatar": "👨‍🌾"
+        "helpful": 5
       }
     ]
   },
@@ -416,8 +388,7 @@
         "comment": "Excellent lemon tea! Refreshing and aromatic.",
         "date": "2023-12-18",
         "verified": true,
-        "helpful": 14,
-        "avatar": "👩‍⚖️"
+        "helpful": 14
       },
       {
         "id": 30,
@@ -426,8 +397,7 @@
         "comment": "Pleasant taste, helps relax in the evening.",
         "date": "2023-12-10",
         "verified": true,
-        "helpful": 6,
-        "avatar": "👨‍⚖️"
+        "helpful": 6
       },
       {
         "id": 31,
@@ -436,8 +406,7 @@
         "comment": "Excellent! Natural lemon taste.",
         "date": "2023-12-05",
         "verified": true,
-        "helpful": 16,
-        "avatar": "👩‍✈️"
+        "helpful": 16
       }
     ]
   },
@@ -458,8 +427,7 @@
         "comment": "Amazing yogurt! Very thick and delicious. I buy regularly for breakfast.",
         "date": "2023-12-15",
         "verified": true,
-        "helpful": 18,
-        "avatar": "👨‍✈️"
+        "helpful": 18
       },
       {
         "id": 33,
@@ -468,8 +436,7 @@
         "comment": "Good yogurt, but would like more honey in the composition.",
         "date": "2023-12-08",
         "verified": true,
-        "helpful": 4,
-        "avatar": "👩‍🔧"
+        "helpful": 4
       },
       {
         "id": 34,
@@ -478,8 +445,7 @@
         "comment": "Excellent! Perfect for diet. Filling and healthy.",
         "date": "2023-11-30",
         "verified": false,
-        "helpful": 12,
-        "avatar": "👨‍🚒"
+        "helpful": 12
       },
       {
         "id": 35,
@@ -488,8 +454,7 @@
         "comment": "Best Greek yogurt! Very smooth texture, natural taste.",
         "date": "2023-11-25",
         "verified": true,
-        "helpful": 22,
-        "avatar": "👩‍🚒"
+        "helpful": 22
       }
     ]
   }

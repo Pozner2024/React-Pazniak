@@ -1,3 +1,4 @@
+//Компонент CardView отвечает за отображение детальной информации о товаре в режиме просмотра
 import React from "react";
 import "./CardView.scss";
 

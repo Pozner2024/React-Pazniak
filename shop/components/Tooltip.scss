@@ -1,4 +1,4 @@
-@import "../styles/design-system.scss";
+@import "./design-system.scss";
 
 .tooltip-wrapper {
   position: relative;
@@ -55,7 +55,6 @@
   text-align: center;
   line-height: $line-height-tight;
 
-  // Для длинных текстов
   &.tooltip__content--multiline {
     white-space: normal;
     max-width: 200px;
@@ -112,7 +111,6 @@
   }
 }
 
-// Вариации для разных позиций
 .tooltip--bottom {
   @keyframes tooltipFadeIn {
     from {
@@ -152,7 +150,6 @@
   }
 }
 
-// Accessibility: Hide tooltips when user prefers reduced motion
 @media (prefers-reduced-motion: reduce) {
   .tooltip {
     animation: none;
@@ -169,7 +166,6 @@
   }
 }
 
-// Тематические варианты tooltip
 .tooltip--success {
   .tooltip__content {
     background: $success;
