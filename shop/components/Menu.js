@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import "./Menu.scss";
 
-const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
+const Menu = ({
+  onMenuSelect,
+  activeSection,
+  cartItemsCount = 0,
+  hasUnsavedChanges = false,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
@@ -30,6 +35,14 @@ const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
       <div className="menu-container">
         <div className="menu-brand">
           <h2>🍽️ Gourmet Shop</h2>
+          {hasUnsavedChanges && (
+            <span
+              className="unsaved-indicator"
+              title="You have unsaved changes"
+            >
+              ●
+            </span>
+          )}
         </div>
 
         <ul className="menu-items desktop-menu">
@@ -60,6 +73,7 @@ const Menu = ({ onMenuSelect, activeSection, cartItemsCount = 0 }) => {
           activeSection={activeSection}
           onMenuSelect={onMenuSelect}
           cartItemsCount={cartItemsCount}
+          hasUnsavedChanges={hasUnsavedChanges}
         />
       </div>
     </nav>

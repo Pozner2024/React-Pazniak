@@ -20,6 +20,10 @@
   }
 
   .menu-brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+
     h2 {
       color: $white;
       margin: 0;
@@ -27,6 +31,15 @@
       font-weight: $font-weight-bold;
       font-family: $font-family-secondary;
       text-shadow: $shadow-sm;
+    }
+
+    .unsaved-indicator {
+      color: #ff6b6b;
+      font-size: $font-size-lg;
+      animation: unsavedPulse 2s infinite;
+      text-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+      cursor: help;
+      font-weight: bold;
     }
   }
 
@@ -150,5 +163,17 @@
   }
   50% {
     transform: scale(1.1);
+  }
+}
+
+@keyframes unsavedPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }

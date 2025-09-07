@@ -4,7 +4,12 @@ import Product from "./Product";
 import CardView from "./CardView";
 import CardEdit from "./CardEdit";
 
-const ProductTable = ({ products: initialProducts }) => {
+const ProductTable = ({
+  products: initialProducts,
+  onDataChange = () => {},
+  onDataSave = () => {},
+  hasUnsavedChanges = false,
+}) => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedItemId, setSelectedItemId] = useState(null);
   const [lastSelectedItemId, setLastSelectedItemId] = useState(null);
@@ -48,6 +53,7 @@ const ProductTable = ({ products: initialProducts }) => {
     setSelectedItemId(null);
     setMode(0);
     setHasChanges(false);
+    onDataSave(); // Уведомляем о сохранении данных
   };
 
   const saveItem = (productData) => {
@@ -64,6 +70,7 @@ const ProductTable = ({ products: initialProducts }) => {
       setLastSelectedItemId(null);
       setMode(1);
       setHasChanges(false);
+      onDataSave(); // Уведомляем о сохранении данных
     } else if (mode === 3) {
       const newProduct = {
         id: Math.max(...products.map((p) => p.id)) + 1,
@@ -75,6 +82,7 @@ const ProductTable = ({ products: initialProducts }) => {
       setLastSelectedItemId(null);
       setMode(1);
       setHasChanges(false);
+      onDataSave(); // Уведомляем о сохранении данных
     }
   };
 
@@ -96,6 +104,7 @@ const ProductTable = ({ products: initialProducts }) => {
 
   const onFormChange = () => {
     setHasChanges(true);
+    onDataChange(); // Уведомляем родительский компонент об изменениях
   };
 
   const selectedItem = products.find((item) => item.id === selectedItemId);

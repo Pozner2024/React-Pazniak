@@ -7,6 +7,9 @@ import Profile from "./Profile";
 import Cart from "./Cart";
 import Reviews from "./Reviews";
 import Footer from "./Footer";
+import NavigationDebugger from "./NavigationDebugger";
+import useBrowserHistory from "../hooks/useBrowserHistory";
+import useUnsavedChanges from "../hooks/useUnsavedChanges";
 import "./ShopInfo.scss";
 
 import {
@@ -42,6 +45,23 @@ const ShopInfo = ({
   const cartItems = useSelector(selectCartItems);
   const totalCartItems = useSelector(selectCartItemsCount);
 
+  // Хуки для управления несохраненными изменениями и историей браузера
+  const {
+    hasUnsavedChanges,
+    markSectionAsChanged,
+    markSectionAsSaved,
+    clearAllUnsavedChanges,
+    hasSectionChanges,
+    getUnsavedMessage,
+  } = useUnsavedChanges();
+
+  const { navigateToSection } = useBrowserHistory(
+    activeSection,
+    setActiveSection,
+    hasUnsavedChanges,
+    getUnsavedMessage()
+  );
+
   useEffect(() => {
     if (initialProducts && initialProducts.length > 0) {
       dispatch(setProducts(initialProducts));
@@ -49,7 +69,8 @@ const ShopInfo = ({
   }, [dispatch, initialProducts]);
 
   const handleMenuSelect = (sectionId) => {
-    setActiveSection(sectionId);
+    // Используем безопасную навигацию с проверкой несохраненных данных
+    navigateToSection(sectionId);
   };
 
   const addToCart = (product, quantity = 1) => {
@@ -137,7 +158,14 @@ const ShopInfo = ({
       case "catalog":
         return <Catalog products={products} onAddToCart={addToCart} />;
       case "profile":
-        return <Profile products={products} />;
+        return (
+          <Profile
+            products={products}
+            onDataChange={() => markSectionAsChanged("profile")}
+            onDataSave={() => markSectionAsSaved("profile")}
+            hasUnsavedChanges={hasSectionChanges("profile")}
+          />
+        );
       case "cart":
         return (
           <Cart
@@ -237,6 +265,7 @@ const ShopInfo = ({
         onMenuSelect={handleMenuSelect}
         activeSection={activeSection}
         cartItemsCount={totalCartItems}
+        hasUnsavedChanges={hasUnsavedChanges}
       />
       <div className="shop-header">
         <h1>{name}</h1>
@@ -246,6 +275,14 @@ const ShopInfo = ({
       </div>
       <div className="shop-content">{renderContent()}</div>
       <Footer />
+
+      {/* Отладчик навигации (только в development режиме) */}
+      {process.env.NODE_ENV === "development" && (
+        <NavigationDebugger
+          hasUnsavedChanges={hasUnsavedChanges}
+          activeSection={activeSection}
+        />
+      )}
     </div>
   );
 };

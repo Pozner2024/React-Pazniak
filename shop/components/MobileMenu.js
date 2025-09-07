@@ -8,6 +8,7 @@ const MobileMenu = ({
   activeSection,
   onMenuSelect,
   cartItemsCount = 0,
+  hasUnsavedChanges = false,
 }) => {
   const handleMenuClick = (itemId) => {
     if (onMenuSelect) {
@@ -39,6 +40,11 @@ const MobileMenu = ({
       <nav className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-menu-header">
           <h3>Menu</h3>
+          {hasUnsavedChanges && (
+            <span className="mobile-unsaved-indicator" title="You have unsaved changes">
+              ● Unsaved changes
+            </span>
+          )}
           <button
             className="mobile-menu-close"
             onClick={onToggle}

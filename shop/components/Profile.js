@@ -3,7 +3,12 @@ import React from "react";
 import ProductTable from "./ProductTable";
 import "./Profile.scss";
 
-const Profile = ({ products }) => {
+const Profile = ({
+  products,
+  onDataChange = () => {},
+  onDataSave = () => {},
+  hasUnsavedChanges = false,
+}) => {
   return (
     <div className="ProfileContainer">
       <div className="profile-header">
@@ -44,7 +49,17 @@ const Profile = ({ products }) => {
 
         <div className="products-management">
           <h3>Product Management</h3>
-          <ProductTable products={products} />
+          {hasUnsavedChanges && (
+            <div className="unsaved-warning">
+              ⚠️ You have unsaved changes in product data
+            </div>
+          )}
+          <ProductTable
+            products={products}
+            onDataChange={onDataChange}
+            onDataSave={onDataSave}
+            hasUnsavedChanges={hasUnsavedChanges}
+          />
         </div>
       </div>
     </div>
